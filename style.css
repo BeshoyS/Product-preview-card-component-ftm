@@ -1,0 +1,175 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
+
+/* Global */
+:root {
+  --heading-font: "Fraunces", serif;
+  --body-font: "Montserrat", sans-serif;
+  --primary-darkcyan: rgb(60, 128, 103);
+  --primary-vdarkcyan: rgb(22, 65, 49);
+  --primary-cream: rgb(242, 235, 227);
+  --neutral-vdarkblue: rgb(28, 35, 43);
+  --neutral-darkgrayblue: rgb(108, 114, 137);
+  --neutral-white: rgb(255, 255, 255);
+  --box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.1);
+  --border-radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  color: var(--neutral-darkgrayblue);
+  background-color: var(--primary-cream);
+  font-family: var(--body-font);
+  height: 100vh;
+  position: relative;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Card */
+main.card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 42rem;
+  display: flex;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
+}
+
+/* Product Image */
+.product-image {
+  width: 50%;
+  background-image: url(./images/image-product-desktop.jpg);
+  background-size: cover;
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+}
+
+/* Product Details */
+.product-details {
+  width: 50%;
+  padding: 2rem;
+  background-color: var(--neutral-white);
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  font-family: var(--body-font);
+  letter-spacing: 3px;
+  font-weight: 300;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  color: var(--neutral-vdarkblue);
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.desc {
+  font-size: 0.9rem;
+  margin: 1rem 0;
+}
+
+/* Product price */
+.price {
+  font-family: var(--heading-font);
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.current-price {
+  color: var(--primary-darkcyan);
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-right: 1rem;
+}
+
+.original-price {
+  font-family: var(--body-font);
+  font-size: 0.8rem;
+  font-weight: lighter;
+  text-decoration: line-through;
+}
+
+/* Product button */
+.product-details button {
+  font-family: var(--body-font);
+  background-color: var(--primary-darkcyan);
+  color: var(--neutral-white);
+  border: none;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
+  transition: background-color 0.3s;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  -ms-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+}
+
+.product-details button:hover {
+  background-color: var(--primary-vdarkcyan);
+}
+
+.product-details img {
+  vertical-align: middle;
+  margin-right: 0.7rem;
+}
+
+/*Mobile Size*/
+@media screen and (max-width: 768px) {
+  main.card {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  /* Product Image */
+  .product-image {
+    width: 100%;
+    background-image: url(./images/image-product-mobile.jpg);
+    height: 17rem;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-left-radius: 0;
+  }
+
+  /* Product Details */
+  .product-details {
+    width: 100%;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: var(--border-radius);
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}
